@@ -2,13 +2,13 @@
 
 Detect the passkey provider's name, icon, and ID. This project supports both hardware and software vendors. The `aaguids.json` file is production-ready and up to date, with more providers to be added eventually.
 
-<br>
-
 ## Prerequisites
 
 Before running aaguids, ensure your system meets the following requirements:
 
 - **Golang**: [Go](https://go.dev/dl) version 1.23+ is required
+
+<br>
 
 ## ⚡ CDN
 
