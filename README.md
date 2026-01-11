@@ -10,8 +10,6 @@ Before running aaguids, ensure your system meets the following requirements:
 
 - **Golang**: [Go](https://go.dev/dl) version 1.23+ is required
 
-<br>
-
 ## ⚡ CDN
 
 - https://cdn.oddinpay.com/aaguids.json
