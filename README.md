@@ -1,6 +1,6 @@
 # aaguids
 
-Detect the passkey provider's name, icon, and ID. This project supports both hardware and software vendors. The `aaguids.json` file is production-ready and up to date, with more providers to be added eventually. This includes officially mentioned Authenticator providers and third-party providers.
+Detect the passkey provider's name, icon, and ID. This project supports both hardware and software vendors. The `aaguids.json` file is production-ready and up to date, with more providers to be added eventually. This includes officially mentioned `authenticator` providers and third-party providers.
 
 <br>
 
@@ -42,3 +42,5 @@ go run .
 
 - [FIDO Alliance](https://fidoalliance.org)
 - [Passkeys.dev](https://passkeys.dev)
+- [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
+- [w3](https://www.w3.org/TR/webauthn-3)
