@@ -8,7 +8,7 @@ Detect the passkey provider's name, icon, and ID. This project supports both har
 
 Before running aaguids, ensure your system meets the following requirements:
 
-- **Golang**: [Go](https://go.dev/dl) version 1.23+ is required
+- **[Go](https://go.dev/dl)**: version 1.23+ is required
 
 <br>
 
