@@ -42,5 +42,5 @@ go run .
 
 - [FIDO Alliance](https://fidoalliance.org)
 - [Passkeys.dev](https://passkeys.dev)
-- [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
-- [w3](https://www.w3.org/TR/webauthn-3)
+- [Web_Authentication_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
+- [W3](https://www.w3.org/TR/webauthn-3)
