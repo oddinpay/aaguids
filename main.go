@@ -10,6 +10,7 @@ func main() {
 	targets := []string{
 		"54d9fee8-e621-4291-8b18-7157b99c5bec",
 		"560a780cb6ae4f03b110082f856425b4",
+		"bada5566-a7aa-401f-bd96-45619a55120d",
 	}
 
 	// Put all your data sources here
