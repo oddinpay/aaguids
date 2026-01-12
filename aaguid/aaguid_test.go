@@ -9,7 +9,7 @@ func TestSpecificAAGUIDs(t *testing.T) {
 	}
 
 	// Put all your data sources here
-	allMaps := []map[AAGUID]string{
+	allMaps := []map[AAGUID]AAGUIDInfo{
 		PasskeyAuthenticatorAAGUIDs,
 		MetadataAAGUIDs,
 	}

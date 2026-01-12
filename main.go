@@ -13,7 +13,7 @@ func main() {
 	}
 
 	// Put all your data sources here
-	allMaps := []map[aaguid.AAGUID]string{
+	allMaps := []map[aaguid.AAGUID]aaguid.AAGUIDInfo{
 		aaguid.PasskeyAuthenticatorAAGUIDs,
 		aaguid.MetadataAAGUIDs,
 	}
