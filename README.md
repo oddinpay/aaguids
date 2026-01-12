@@ -35,8 +35,8 @@ go run .
 
 ```bash
 
-[FOUND] 54d9fee8-e621-4291-8b18-7157b99c5bec -> HID Crescendo Enabled
-[FOUND] 560a780cb6ae4f03b110082f856425b4 -> KQC QuKey Bio FIDO2 Authenticator
+[FOUND] 54d9fee8-e621-4291-8b18-7157b99c5bec -> HID Crescendo Enabled data:image/svg+xml;base64
+[FOUND] 560a780cb6ae4f03b110082f856425b4 -> KQC QuKey Bio FIDO2 Authenticator data:image/svg+xml;base64
 
 ```
 
