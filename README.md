@@ -14,7 +14,7 @@ Before running aaguids, ensure your system meets the following requirements:
 
 ## Usage
 
-### HTTP
+### HTTP (⚡CDN)
 
 - https://cdn.oddinpay.com/aaguids.json
 
