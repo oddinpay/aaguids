@@ -23,6 +23,8 @@ Before running aaguids, ensure your system meets the following requirements:
 ```sh
 git clone https://github.com/oddinpay/aaguids
 
+cd example/lookup
+
 go mod tidy
 
 go run .
