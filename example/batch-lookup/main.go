@@ -13,7 +13,6 @@ func main() {
 		"bada5566-a7aa-401f-bd96-45619a55120d",
 	}
 
-	// Put all your data sources here
 	allMaps := []map[aaguid.AAGUID]aaguid.AAGUIDInfo{
 		aaguid.PasskeyAuthenticatorAAGUIDs,
 		aaguid.MetadataAAGUIDs,
@@ -22,15 +21,12 @@ func main() {
 	for _, target := range targets {
 		id := aaguid.MustParseAAGUID(target)
 		found := false
-
-		// Check all maps in one loop
 		for _, m := range allMaps {
 			if name, ok := m[id]; ok {
 				fmt.Println("[FOUND]", target, "->", name)
 				found = true
 			}
 		}
-
 		if !found {
 			fmt.Println("Could not find:", target)
 		}
