@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/oddinpay/aaguid/aaguid"
+	"github.com/oddinpay/aaguid"
 )
 
 func main() {
