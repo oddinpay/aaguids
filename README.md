@@ -2,8 +2,6 @@
 
 Detect the passkey provider's name, icon, and ID. This project supports both hardware and software vendors. The `aaguids.json` file is production-ready and up to date, with more providers to be added eventually. This includes officially mentioned `authenticator` providers and third-party providers.
 
-<br>
-
 ## Prerequisites
 
 Before running aaguids, ensure your system meets the following requirements:
