@@ -12,13 +12,15 @@ Before running aaguids, ensure your system meets the following requirements:
 
 <br>
 
-## ⚡ CDN
+## Usage
+
+### HTTP
 
 - https://cdn.oddinpay.com/aaguids.json
 
 <br>
 
-## Usage (Demo)
+### Go
 
 ```sh
 git clone https://github.com/oddinpay/aaguids
