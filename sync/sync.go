@@ -15,8 +15,8 @@ import (
 
 // --- Configuration ---
 const (
-	defaultSourceFile = "../aaguid/aaguid.go"
-	defaultTargetFile = "aaguids.json"
+	defaultSourceFile = "../aaguid.go"
+	defaultTargetFile = "../json/aaguids.json"
 	boxInnerWidth     = 63
 )
 
