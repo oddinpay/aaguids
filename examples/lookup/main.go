@@ -2,17 +2,112 @@ package main
 
 import (
 	"fmt"
+	"strings"
+	"unicode/utf8"
 
 	"github.com/oddinpay/aaguid"
 )
 
-func main() {
-	target := "54d9fee8-e621-4291-8b18-7157b99c5bec"
-	id := aaguid.MustParseAAGUID(target)
+// --- UI Colors & Constants ---
+const (
+	boxInnerWidth = 63
+	GREEN         = "\033[0;32m"
+	RED           = "\033[0;31m"
+	YELLOW        = "\033[0;33m"
+	BLUE          = "\033[0;34m"
+	CYAN          = "\033[0;36m"
+	MAGENTA       = "\033[0;35m"
+	BOLD          = "\033[1m"
+	DIM           = "\033[2m"
+	NC            = "\033[0m"
+)
 
-	if info, ok := aaguid.MetadataAAGUIDs[id]; ok {
-		fmt.Printf("[FOUND] %s -> %s\n", target, info.Name)
-	} else {
-		fmt.Println("Could not find:", target)
+type LookupResult struct {
+	Target    string
+	Found     bool
+	Name      string
+	IconLight string
+	IconDark  string
+}
+
+func boxHeader(color, icon, title string) string {
+	titleRunes := utf8.RuneCountInString(title)
+	dashes := max(boxInnerWidth-(2+1+2+1+titleRunes+1), 1)
+	return fmt.Sprintf("%s┌── %s %s %s┐%s", color, icon, title, strings.Repeat("─", dashes), NC)
+}
+
+func boxFooter(color string) string {
+	return fmt.Sprintf("%s└%s┘%s", color, strings.Repeat("─", boxInnerWidth), NC)
+}
+
+func main() {
+	// You can add multiple targets here just like in your tests
+	targets := []string{
+		"54d9fee8-e621-4291-8b18-7157b99c5bec",
 	}
+
+	var results []LookupResult
+	foundCount := 0
+
+	for _, target := range targets {
+		id := aaguid.MustParseAAGUID(target)
+		found := false
+		var info aaguid.AAGUIDInfo
+
+		if val, ok := aaguid.MetadataAAGUIDs[id]; ok {
+			info = val
+			found = true
+		}
+
+		if found {
+			foundCount++
+			results = append(results, LookupResult{
+				Target:    target,
+				Found:     true,
+				Name:      info.Name,
+				IconLight: info.IconLight,
+				IconDark:  info.IconDark,
+			})
+		} else {
+			results = append(results, LookupResult{
+				Target: target,
+				Found:  false,
+			})
+		}
+	}
+
+	fmt.Println()
+	fmt.Println(boxHeader(BLUE, "🔍", "AAGUID LOOKUP RESULTS"))
+
+	for _, r := range results {
+		if !r.Found {
+			fmt.Printf("   🆔 ID: %s\n", r.Target)
+			fmt.Printf("   └─ %s❌ Not Found in maps%s\n\n", RED, NC)
+			continue
+		}
+
+		displayName := r.Name
+		if displayName == "" || displayName == "null" {
+			displayName = "Unknown Authenticator"
+		}
+
+		lightStatus := "❌"
+		if len(r.IconLight) > 0 {
+			lightStatus = "✅"
+		}
+		darkStatus := "❌"
+		if len(r.IconDark) > 0 {
+			darkStatus = "✅"
+		}
+
+		fmt.Printf("   🆔 ID: %s\n", r.Target)
+		fmt.Printf("   ├─ [Metadata] %s%s%s\n", GREEN, displayName, NC)
+		fmt.Printf("   └─ Assets: 🌞: %s | 🌒: %s\n\n", lightStatus, darkStatus)
+	}
+	fmt.Println(boxFooter(BLUE))
+
+	fmt.Println(boxHeader(CYAN, "📊", "LOOKUP SUMMARY"))
+	fmt.Printf("   %s🎯%s  %-15s Checked: %-3d | Found: %s%-3d%s\n", YELLOW, NC, "Results:", len(targets), GREEN, foundCount, NC)
+	fmt.Println(boxFooter(CYAN))
+	fmt.Println()
 }
