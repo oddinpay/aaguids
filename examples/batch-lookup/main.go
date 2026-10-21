@@ -13,7 +13,6 @@ func main() {
 	}
 
 	allMaps := []map[aaguid.AAGUID]aaguid.AAGUIDInfo{
-		aaguid.PasskeyAuthenticatorAAGUIDs,
 		aaguid.MetadataAAGUIDs,
 	}
 
