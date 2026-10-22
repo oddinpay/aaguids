@@ -61,7 +61,7 @@ jobs:
 
       - name: Upload to Cloudflare R2 & Purge Cache
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
