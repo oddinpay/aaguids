@@ -66,10 +66,10 @@ jobs:
           CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
         run: |
-          npx wrangler r2 object put "$R2_BUCKET/aaguids.json" --file="../json/aaguids.json" --remote
+          npx wrangler r2 object put "$R2_BUCKET/aaguids.json" --file="./json/aaguids.json" --remote
 
           # 2. Purge Cloudflare Edge Cache for the CDN URL
           curl -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache" \
             -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
             -H "Content-Type: application/json" \
-            --data '{"files":["https://cdn.oddinpay.com/aaguids.json"]}'
+            --data '{"files":["https://public.oddinpay.com/aaguids.json"]}'
