@@ -35,7 +35,7 @@ go run .
 
 ```bash
 
-┌── 🔍 AAGUID BATCH LOOKUP RESULTS ─────────────────────────────┐
+┌── 🔍 BATCH LOOKUP RESULTS ─────────────────────────────┐
    🆔 ID: 54d9fee8-e621-4291-8b18-7157b99c5bec
    ├─ [Metadata] HID Crescendo Enabled
    └─ Assets: 🌞: ✅ | 🌒: ❌

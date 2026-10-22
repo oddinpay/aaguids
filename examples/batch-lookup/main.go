@@ -85,7 +85,7 @@ func main() {
 	}
 
 	fmt.Println()
-	fmt.Println(boxHeader(BLUE, "🔍", "AAGUID BATCH LOOKUP RESULTS"))
+	fmt.Println(boxHeader(BLUE, "🔍", "BATCH LOOKUP RESULTS"))
 
 	for _, r := range results {
 		if !r.Found {
