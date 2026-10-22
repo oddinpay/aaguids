@@ -66,9 +66,7 @@ jobs:
           CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
         run: |
-          # 1. Upload aaguids.json to Cloudflare R2 using Wrangler
-          # (Update --file path if your Go script generates it inside a subdirectory)
-          npx wrangler r2 object put "$R2_BUCKET/aaguids.json" --file="./aaguids.json"
+          npx wrangler r2 object put "$R2_BUCKET/aaguids.json" --file="./aaguids.json" --remote
 
           # 2. Purge Cloudflare Edge Cache for the CDN URL
           curl -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache" \
