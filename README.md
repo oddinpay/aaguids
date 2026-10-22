@@ -35,8 +35,22 @@ go run .
 
 ```bash
 
-[FOUND] 54d9fee8-e621-4291-8b18-7157b99c5bec -> HID Crescendo Enabled data:image/svg+xml;base64
-[FOUND] 560a780cb6ae4f03b110082f856425b4 -> KQC QuKey Bio FIDO2 Authenticator data:image/svg+xml;base64
+┌── 🔍 AAGUID BATCH LOOKUP RESULTS ─────────────────────────────┐
+   🆔 ID: 54d9fee8-e621-4291-8b18-7157b99c5bec
+   ├─ [Metadata] HID Crescendo Enabled
+   └─ Assets: 🌞: ✅ | 🌒: ❌
+
+   🆔 ID: 560a780cb6ae4f03b110082f856425b4
+   ├─ [Metadata] KQC QuKey Bio FIDO2 Authenticator
+   └─ Assets: 🌞: ✅ | 🌒: ❌
+
+   🆔 ID: bada5566-a7aa-401f-bd96-45619a55120d
+   └─ ❌ Not Found in maps
+
+└───────────────────────────────────────────────────────────────┘
+┌── 📊 BATCH LOOKUP SUMMARY ────────────────────────────────────┐
+   🎯  Results:        Checked: 3   | Found: 2
+└───────────────────────────────────────────────────────────────┘
 
 ```
 
