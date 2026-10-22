@@ -19,7 +19,7 @@ import (
 
 // --- Configuration ---
 const (
-	targetDir         = "../aaguid"
+	targetDir         = "../"
 	defaultTargetFile = "aaguid.go"
 	boxInnerWidth     = 63
 	passkeyRepoURL    = "https://raw.githubusercontent.com/passkeydeveloper/passkey-authenticator-aaguids/main/aaguid.json"
@@ -150,7 +150,7 @@ func loadExistingEntries(targetFile string) []Entry {
 				Name:      m[2],
 				IconLight: m[3],
 				IconDark:  m[4],
-				Category:  "Metadata", 
+				Category:  "Metadata",
 			})
 		}
 	}
