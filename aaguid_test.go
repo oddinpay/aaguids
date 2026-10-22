@@ -1,4 +1,4 @@
-package aaguid
+package aaguids
 
 import (
 	"fmt"
