@@ -20,7 +20,7 @@ import (
 // --- Configuration ---
 const (
 	targetDir         = "../"
-	defaultTargetFile = "aaguid.go"
+	defaultTargetFile = "aaguids.go"
 	boxInnerWidth     = 63
 	passkeyRepoURL    = "https://raw.githubusercontent.com/passkeydeveloper/passkey-authenticator-aaguids/main/aaguid.json"
 	fidoMDSURL        = "https://mds3.fidoalliance.org/"
