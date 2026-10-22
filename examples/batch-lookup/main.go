@@ -5,7 +5,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/oddinpay/aaguid"
+	"github.com/oddinpay/aaguids"
 )
 
 // --- UI Colors & Constants ---
@@ -47,17 +47,17 @@ func main() {
 		"bada5566-a7aa-401f-bd96-45619a55120d",
 	}
 
-	allMaps := []map[aaguid.AAGUID]aaguid.AAGUIDInfo{
-		aaguid.MetadataAAGUIDs,
+	allMaps := []map[aaguids.AAGUID]aaguids.AAGUIDInfo{
+		aaguids.MetadataAAGUIDs,
 	}
 
 	var results []LookupResult
 	foundCount := 0
 
 	for _, target := range targets {
-		id := aaguid.MustParseAAGUID(target)
+		id := aaguids.MustParseAAGUID(target)
 		found := false
-		var info aaguid.AAGUIDInfo
+		var info aaguids.AAGUIDInfo
 
 		for _, m := range allMaps {
 			if val, ok := m[id]; ok {

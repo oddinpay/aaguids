@@ -1,4 +1,2 @@
-github.com/oddinpay/aaguid v0.0.0-20260227185433-247676ad9456 h1:LHeUwK9M4gkYD4FLWCgcUo8i6fQAKhzuhMaGegx7F2U=
-github.com/oddinpay/aaguid v0.0.0-20260227185433-247676ad9456/go.mod h1:gRLd++FWT4DVvfO8n38Z0y2ErUH509tvNaL9iWyRlO8=
-github.com/oddinpay/aaguids v0.0.0-20261022191230-2e1a0fc6a1c8 h1:pB60fBpioR5uIlS292rHRYBPo1NyUaPce4UgVxvnA60=
-github.com/oddinpay/aaguids v0.0.0-20261022191230-2e1a0fc6a1c8/go.mod h1:V691Pyo9gnBWZ9B418a6//hZ6Unh9CEaw5Q8DM5iYxg=
+github.com/oddinpay/aaguids v0.0.0-20261022191251-9cb0c0c113d8 h1:j3xhd6rnZl4FcQryxaO92AJkBUa95z+Ej7GQpoAFHls=
+github.com/oddinpay/aaguids v0.0.0-20261022191251-9cb0c0c113d8/go.mod h1:V691Pyo9gnBWZ9B418a6//hZ6Unh9CEaw5Q8DM5iYxg=

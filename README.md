@@ -45,11 +45,12 @@ go run .
    └─ Assets: 🌞: ✅ | 🌒: ❌
 
    🆔 ID: bada5566-a7aa-401f-bd96-45619a55120d
-   └─ ❌ Not Found in maps
+   ├─ [Metadata] 1Password
+   └─ Assets: 🌞: ✅ | 🌒: ✅
 
 └───────────────────────────────────────────────────────────────┘
 ┌── 📊 BATCH LOOKUP SUMMARY ────────────────────────────────────┐
-   🎯  Results:        Checked: 3   | Found: 2
+   🎯  Results:        Checked: 3   | Found: 3
 └───────────────────────────────────────────────────────────────┘
 
 ```

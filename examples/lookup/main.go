@@ -5,7 +5,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/oddinpay/aaguid"
+	"github.com/oddinpay/aaguids"
 )
 
 // --- UI Colors & Constants ---
@@ -41,20 +41,20 @@ func boxFooter(color string) string {
 }
 
 func main() {
-	// You can add multiple targets here just like in your tests
+
 	targets := []string{
-		"54d9fee8-e621-4291-8b18-7157b99c5bec",
+		"bada5566-a7aa-401f-bd96-45619a55120d",
 	}
 
 	var results []LookupResult
 	foundCount := 0
 
 	for _, target := range targets {
-		id := aaguid.MustParseAAGUID(target)
+		id := aaguids.MustParseAAGUID(target)
 		found := false
-		var info aaguid.AAGUIDInfo
+		var info aaguids.AAGUIDInfo
 
-		if val, ok := aaguid.MetadataAAGUIDs[id]; ok {
+		if val, ok := aaguids.MetadataAAGUIDs[id]; ok {
 			info = val
 			found = true
 		}
