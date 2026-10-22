@@ -1,14 +1,13 @@
 name: aaguids update
 
 on:
-  push:
-    branches: [main]
   schedule:
     - cron: "0 */12 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update:
@@ -29,18 +28,34 @@ jobs:
       - name: Run Tests
         run: go test ./...
 
-      - name: Commit and Push Changes
+      - name: Create Pull Request and Merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stage all modified files (like your json files)
+          # Check if there are any changes
           git add .
-
-          # Check if there are actual changes to commit
           if git diff --staged --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "chore: auto-update aaguids data [skip ci]"
-            git push
+            exit 0
           fi
+
+          # Create a dynamic branch name for the update
+          BRANCH_NAME="aaguids-update-${{ github.run_number }}"
+          git checkout -b "$BRANCH_NAME"
+
+          # Commit changes
+          git commit -m "chore: auto-update aaguids data"
+          git push origin "$BRANCH_NAME"
+
+          # Create the Pull Request and capture its URL
+          PR_URL=$(gh pr create \
+            --title "chore: auto-update aaguids data" \
+            --body "Automated background update of AAGUID records." \
+            --base main \
+            --head "$BRANCH_NAME")
+
+          # Merge it immediately (no settings required)
+          gh pr merge "$PR_URL" --squash --delete-branch
